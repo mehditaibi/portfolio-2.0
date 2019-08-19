@@ -114,17 +114,13 @@ function ContactForm() {
   const { value: message, bind: bindMessage, reset: resetMessage } = useInput(
     ""
   );
+
   const handleSubmit = evt => {
     evt.preventDefault();
     const form = new FormData();
-    let contactFormData = [
-      { key: "name", value: name },
-      { key: "email", value: email },
-      { key: "message", value: message }
-    ];
-    contactFormData.map(data => {
-      form.set(data.key, data.value);
-    });
+    form.set("name", name);
+    form.set("email", email);
+    form.set("message", message);
     axios
       .post(contactFormRequest.post, form, {
         headers: { "Content-Type": "multipart/form-data" }
@@ -135,6 +131,7 @@ function ContactForm() {
       .catch(function(response) {
         console.log(response);
       });
+
     resetName();
     resetEmail();
     resetMessage();
