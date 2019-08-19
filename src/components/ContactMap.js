@@ -1,5 +1,5 @@
 import React from "react";
-import MapStyle from "./MapStyle.json";
+import MapStyle from "../styles/MapStyle.json";
 import styled from "styled-components";
 
 const MapContainer = styled.div`
