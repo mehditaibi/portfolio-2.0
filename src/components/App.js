@@ -10,7 +10,7 @@ import NotFoundPage from "./NotFoundPage";
 const Main = styled.main`
   height: 100vh;
   width 100vw;
-  background-color: #0f1416;
+  background-color: #fffff;
   overflow: auto;
 `;
 

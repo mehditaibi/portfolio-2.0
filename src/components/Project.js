@@ -6,6 +6,7 @@ const Main = styled.div`
   margin: 0 auto;
   @media (max-width: 768px) {
     display: block;
+    margin: 0 auto;
   }
 `;
 
@@ -14,6 +15,7 @@ const Info = styled.div`
   font-family: "Open Sans", sans-serif;
   position: relative;
   text-align: center;
+  margin: 0 auto;
   @media (max-width: 768px) {
     padding-left: 0px;
   }

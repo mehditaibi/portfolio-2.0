@@ -47,7 +47,7 @@ const Position = styled.h2`
   font-family: "Open Sans", sans-serif;
   line-height: 1px;
   @media (max-width: 768px) {
-    font-size: 3vw;
+    font-size: 2.5vw;
   }
 `;
 

@@ -4,7 +4,7 @@ import Project from "./Project";
 import PetSitters from "../images/petsitters.png";
 
 const Main = styled.div`
-  height: 90%;
+  height: 80%;
   background-color: #ffffff;
   padding: 5% 5% 0 5% ;
   @media (max-width: 768px) {
