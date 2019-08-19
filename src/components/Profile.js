@@ -32,7 +32,7 @@ const Name = styled.h1`
   font-family: "Montserrat", sans-serif;
   font-weight: bolder;
   @media (max-width: 768px) {
-    font-size: 12vw;
+    font-size: 10vw;
     margin: 40px 0 0 0;
   }
 `;

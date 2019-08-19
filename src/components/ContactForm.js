@@ -66,9 +66,9 @@ const EmailInput = styled.input`
 
 const SubmitButtom = styled.input`
   height: 50px;
-  width: 100px;
   @media (max-width: 768px) {
     margin-top: 2vh;
+    height: 50px;
   }
 `;
 
@@ -95,6 +95,7 @@ const TextArea = styled.textarea`
   }
   @media (max-width: 768px) {
     margin-top: 2vh;
+    height: 100px;
   }
 `;
 
@@ -133,7 +134,7 @@ function ContactForm() {
     resetEmail();
     resetMessage();
   };
-  
+
   return (
     <FormContainer>
       <Form onSubmit={handleSubmit}>
