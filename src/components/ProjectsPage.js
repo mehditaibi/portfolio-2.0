@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import Project from "./Project";
-import PetSitters from "../images/petsitters.png";
 
 const Main = styled.div`
   height: 80%;
@@ -16,7 +15,7 @@ function ProjectsPage() {
   return (
     <Main>
       <Project
-        image = {PetSitters}
+        image = 'https://ik.imagekit.io/mehdi/pet-sitters-thumbnail_of1Wwjtox.png'
         title={"PETSITTERS"}
         description={
           "This app aims at helping pet owners to find a nearby pet sitter."

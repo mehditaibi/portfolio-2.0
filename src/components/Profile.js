@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import picture from "../images/profile-picture.png";
 import SocialIconsContainer from "./SocialIconsContainer";
 
 const Main = styled.div`
@@ -54,7 +53,7 @@ const Position = styled.h2`
 function Profile() {
   return (
     <Main>
-      <ProfilePictue src={picture} />
+      <ProfilePictue src='https://ik.imagekit.io/mehdi/pofile-picture_FXI8Ca0JD.png'/>
       <Name>MEHDI TAIBI</Name>
       <Position>Full Stack Developer</Position>
       <SocialIconsContainer />

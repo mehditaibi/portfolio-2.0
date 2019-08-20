@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import logo from "../images/logo.png";
 import resume from "../images/resume.pdf";
 import { NavLink } from "react-router-dom";
 
@@ -122,7 +121,7 @@ const LinkContainer = styled.li`
 function NavBar() {
   return (
     <Main>
-      <Logo src={logo} />
+      <Logo src='https://ik.imagekit.io/mehdi/logo_-FZFa4ktf.png'/>
       <LinksContainer>
         <LinkContainer>
           <StyledLink to="/" exact={true}>
