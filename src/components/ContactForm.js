@@ -123,7 +123,7 @@ function ContactForm() {
     form.set("message", message);
     axios
       .post(contactFormRequest.post, form, {
-        headers: { "Content-Type": "multipart/form-data" }
+        headers: { "Content-Type": "application/json" }
       })
       .then(function(response) {
         console.log(response);
