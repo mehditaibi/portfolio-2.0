@@ -117,13 +117,11 @@ function ContactForm() {
 
   const handleSubmit = evt => {
     evt.preventDefault();
-    const form = new FormData();
-    form.set("name", name);
-    form.set("email", email);
-    form.set("message", message);
     axios
-      .post(contactFormRequest.post, form, {
-        headers: { "Content-Type": "application/json" }
+      .post(contactFormRequest.post, {
+        name: name,
+        email: email,
+        message: message
       })
       .then(function(response) {
         console.log(response);
