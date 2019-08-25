@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Switch, Route, Redirect } from "react-router-dom";
-import Home from "./Home";
+import HomePage from "./HomePage";
 import ProjectsPage from "./ProjectsPage";
 import ContactPage from "./ContactPage";
 import NavBar from "./NavBar";
@@ -19,7 +19,7 @@ function App() {
     <Main className="App">
       <NavBar />
       <Switch>
-        <Route exact path="/" component={Home} />
+        <Route exact path="/" component={HomePage} />
         <Route exact path="/projects" component={ProjectsPage} />
         <Route exact path="/contact" component={ContactPage} />
         <Route path="/404" component={NotFoundPage} />

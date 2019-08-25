@@ -8,7 +8,7 @@ const Main = styled.div`
   background-color: #ffffff;
 `;
 
-function Home() {
+function HomePage() {
   return (
     <Main>
       <Profile />
@@ -16,4 +16,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default HomePage;

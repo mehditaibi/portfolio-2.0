@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { useInput } from "../hooks/input-hook";
 import SendButton from "../images/send-button.png";
 import axios from "axios";
 import contactFormRequest from "../contactFormRequest";
+import ThankYou from "./ThankYou";
+import isEmail from "validator/lib/isEmail";
 
 const FormContainer = styled.div`
   padding-top: 10px;
@@ -108,59 +110,86 @@ const FlexContainer = styled.div`
   }
 `;
 
+const EmailErrorMessage = styled.p`
+  margin-top: 0;
+  color: red;
+  font-family: "Open Sans", sans-serif;
+`;
+
 function ContactForm() {
   const { value: name, bind: bindName, reset: resetName } = useInput("");
   const { value: email, bind: bindEmail, reset: resetEmail } = useInput("");
   const { value: message, bind: bindMessage, reset: resetMessage } = useInput(
     ""
   );
+  const [hidden, setHidden] = useState(true);
+  React.useEffect = () => setHidden(false);
+  const [emailError, setEmailError] = useState(false);
+  React.useEffect = () => setEmailError(true);
 
   const handleSubmit = evt => {
     evt.preventDefault();
-    axios
-      .post(contactFormRequest.post, {
-        name: name,
-        email: email,
-        message: message
-      })
-      .then(function(response) {
-        console.log(response);
-      })
-      .catch(function(response) {
-        console.log(response);
-      });
+    setEmailError(false);
+    if (isEmail(email)) {
+      axios
+        .post(contactFormRequest.post, {
+          name: name,
+          email: email,
+          message: message
+        })
+        .then(function(response) {
+          setHidden(false);
+        })
+        .catch(function(response) {});
 
-    resetName();
-    resetEmail();
-    resetMessage();
+      resetName();
+      resetEmail();
+      resetMessage();
+    } else {
+      setEmailError(true);
+    }
   };
 
   return (
     <FormContainer>
-      <Form onSubmit={handleSubmit}>
-        <FlexContainer>
-          <NameInput
+      {hidden ? (
+        <Form onSubmit={handleSubmit}>
+          {emailError ? (
+            <EmailErrorMessage>
+              Please double check your email.
+            </EmailErrorMessage>
+          ) : null}
+          <FlexContainer>
+            <NameInput
+              type="text"
+              {...bindName}
+              placeholder="Your name"
+              required
+            />
+            <EmailInput
+              type="text"
+              {...bindEmail}
+              placeholder= "Your email"
+              style={
+                emailError
+                  ? { border: "2px solid red", color: "red" }
+                  : { border: "1px solid #0c131a" }
+              }
+              required
+            />
+          </FlexContainer>
+          <TextArea
             type="text"
-            {...bindName}
-            placeholder="Your name"
+            {...bindMessage}
+            placeholder="Your message"
             required
           />
-          <EmailInput
-            type="text"
-            {...bindEmail}
-            placeholder="Your email"
-            required
-          />
-        </FlexContainer>
-        <TextArea
-          type="text"
-          {...bindMessage}
-          placeholder="Your message"
-          required
-        />
-        <br />
-        <SubmitButtom type="image" src={SendButton} alt="Submit Form" />
-      </Form>
+          <br />
+          <SubmitButtom type="image" src={SendButton} alt="Submit Form" />
+        </Form>
+      ) : (
+        <ThankYou />
+      )}
     </FormContainer>
   );
 }

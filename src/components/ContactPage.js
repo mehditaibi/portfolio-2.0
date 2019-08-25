@@ -11,23 +11,8 @@ const Main = styled.div`
   }
 `;
 
-const Title = styled.p`
-  margin: 0;
-  margin: 1.5% 0;
-  font-family: "Montserrat", sans-serif;
-  font-size: 1.5vw;
-  padding-top: 10px;
-  text-align: center;
-  @media (max-width: 768px) {
-    font-size: 4vw;
-    margin: 0;
-    margin-top: 2vh;
-  font-size: 20px;
-
-  }
-`;
-
 const ContactFormSection = styled.div`
+  margin-top: 5vh;
   padding: 0 5%;
 `;
 
@@ -36,8 +21,7 @@ function ContactPage() {
     <Main>
       <ContactMap />
       <ContactFormSection>
-        <Title>Get in touch</Title>
-        <ContactForm />
+      <ContactForm />
       </ContactFormSection>
     </Main>
   );
