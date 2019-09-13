@@ -53,7 +53,7 @@ const Position = styled.h2`
 function Profile() {
   return (
     <Main>
-      <ProfilePictue src='https://ik.imagekit.io/mehdi/pofile-picture_FXI8Ca0JD.png'/>
+      <ProfilePictue src='https://res.cloudinary.com/mehditaibi-com/image/upload/v1568332298/portfolio/myAvatar_fglwpj.svg'/>
       <Name>MEHDI TAIBI</Name>
       <Position>Full Stack Developer</Position>
       <SocialIconsContainer />

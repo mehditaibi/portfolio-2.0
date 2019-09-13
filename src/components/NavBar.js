@@ -11,7 +11,7 @@ const Main = styled.nav`
   background-color: #0f1416;
   display: flex;
   padding: 0px 5%;
-  box-shadow: 0 9px 4px -6px #0496AA;
+  box-shadow: 0px 3px 4px 0px #0496AA;
   z-index: 1;
   @media (max-width: 768px) {
     justify-content: space-around;
@@ -27,8 +27,9 @@ const Main = styled.nav`
 `;
 
 const Logo = styled.img`
-  height: 100%;
+  height: 80%;
   vertical-align: middle;
+  padding: 1%;
   @media (max-width: 768px) {
     display: none;
   }
@@ -36,10 +37,10 @@ const Logo = styled.img`
 
 const LinksContainer = styled.ul`
   list-style-type: none;
-  margin-left: auto;
-  padding: 0px;
+  margin: 0 0 0 auto;
   position: relative;
   top: 0%;
+  line-height: 8vh;
   @media (max-width: 768px) {
     margin-left: 0;
     width: 100%;
@@ -52,7 +53,7 @@ const LinksContainer = styled.ul`
 const StyledLink = styled(NavLink)`
   text-decoration: none;
   color: #0496aa;
-  font-size: 1.5vw;
+  font-size: 2vw;
   margin: 0 10px;
   font-weight: bold;
   transition: 0.4s ease;
@@ -82,7 +83,7 @@ const StyledLink = styled(NavLink)`
 const PDFLink = styled.a`
   text-decoration: none;
   color: #0496AA;
-  font-size: 1.5vw;
+  font-size: 2vw;
   margin: 0 10px;
   font-weight: bold;
   transition: 0.4s ease;
@@ -121,7 +122,7 @@ const LinkContainer = styled.li`
 function NavBar() {
   return (
     <Main>
-      <Logo src='https://ik.imagekit.io/mehdi/logo_-FZFa4ktf.png'/>
+      <Logo src='https://res.cloudinary.com/mehditaibi-com/image/upload/v1568332303/portfolio/logo_bgzxx2.png'/>
       <LinksContainer>
         <LinkContainer>
           <StyledLink to="/" exact={true}>

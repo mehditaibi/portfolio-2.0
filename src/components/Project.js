@@ -7,6 +7,7 @@ const Main = styled.div`
   @media (max-width: 768px) {
     display: block;
     margin: 0 auto;
+    padding-top: 50px;
   }
 `;
 
